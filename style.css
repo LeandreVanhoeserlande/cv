@@ -50,6 +50,11 @@ section h2 {
   margin-bottom: 12px;
   color: #0077ff;
 }
+section h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
 
 /* --------------------- HOBBIES --------------------- */
 #hobbies .hobbies {
@@ -95,7 +100,7 @@ section h2 {
   margin: 6px 0 0 20px;
 }
 
-/* --------------------- SKILLS (Informatique) --------------------- */
+/* --------------------- SKILLS --------------------- */
 .skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -139,6 +144,27 @@ section h2 {
   transform: translateX(-50%) translateY(-4px);
 }
 
+/* --------------------- TESTIMONIALS --------------------- */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.testimonial {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-style: italic;
+}
+.testimonial small {
+  display: block;
+  margin-top: 8px;
+  text-align: right;
+  font-style: normal;
+  color: #555;
+}
+
 /* --------------------- FOOTER --------------------- */
 footer {
   text-align: center;
@@ -160,3 +186,4 @@ footer a {
     height: 80px;
   }
 }
+
