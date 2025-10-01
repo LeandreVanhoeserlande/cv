@@ -21,35 +21,45 @@ a {
 /* --------------------- HEADER --------------------- */
 header.header-cv {
   text-align: center;
-  padding: 80px 20px; /* plus d’espace pour le grand "Bonjour" */
+  padding: 80px 20px;
   background: url("img/illustration-blue-sky-clouds-anime-600nw-2415799323.webp") no-repeat center center;
   background-size: cover;
   color: white;
   position: relative;
 }
 header.header-cv h1 {
-  font-size: 4rem; /* Bonjour encore plus grand */
+  font-size: 4rem; /* Bonjour très grand */
   font-weight: 900;
   margin-bottom: 20px;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-}
-header.header-cv .name-cv {
-  display: block;
-  font-size: 2.5rem; /* Prénom + nom plus visible */
-  font-weight: 700;
-  margin: 20px 0;
-  color: #0077ff; /* Bleu */
-  text-align: center; /* Centré */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 header.header-cv .profile {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  margin: 12px auto 0; /* Centré automatiquement */
+  margin: 12px auto 0; /* Centré */
   border: 3px solid white;
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  display: block; /* Pour que margin auto fonctionne */
+  display: block;
+}
+
+/* --------------------- INTRO / NOM --------------------- */
+section#intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+section#intro .name-cv {
+  font-size: 2rem; /* Nom un peu plus petit que Bonjour */
+  font-weight: 700;
+  color: #0077ff; /* bleu */
+  margin-bottom: 12px;
+}
+section#intro p {
+  font-size: 1rem;
+  color: #222;
+  line-height: 1.5;
 }
 
 /* --------------------- SECTIONS --------------------- */
@@ -173,7 +183,7 @@ section h2 {
 footer {
   text-align: center;
   padding: 16px;
-  background: #0077ff;
+  background: #0077ff; /* Bleu */
   color: white;
 }
 footer ul {
@@ -225,9 +235,7 @@ footer a {
   header.header-cv h1 {
     font-size: 2.2rem;
   }
-  header.header-cv .name-cv {
+  section#intro .name-cv {
     font-size: 1.5rem;
   }
 }
-
-
