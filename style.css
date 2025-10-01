@@ -21,24 +21,33 @@ a {
 /* --------------------- HEADER --------------------- */
 header.header-cv {
   text-align: center;
-  padding: 40px 20px;
-  background: url('img/concept-banniere-fond-ecran-site-web-medias-modele-technologie-numerique-fleche-bleu-fonce-geometrique-metallique_112380-1137.avif') no-repeat center center;
+  padding: 60px 20px;
+  background: url("img/header-bg.jpg") no-repeat center center;
   background-size: cover;
   color: white;
   position: relative;
 }
 header.header-cv h1 {
-  margin-bottom: 12px;
-  font-size: 2.2rem;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  font-size: 3rem; /* Bonjour plus large */
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
-header.header-cv img.profile {
+header.header-cv .profile {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   margin-top: 12px;
   border: 3px solid white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+header.header-cv .name-cv {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 12px;
+  color: #0077ff; /* Bleu */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* --------------------- SECTIONS --------------------- */
@@ -211,6 +220,10 @@ footer a {
   .hobby {
     height: 80px;
   }
+  header.header-cv h1 {
+    font-size: 2.2rem;
+  }
+  header.header-cv .name-cv {
+    font-size: 1.5rem;
+  }
 }
-
-
