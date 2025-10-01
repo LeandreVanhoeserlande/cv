@@ -21,18 +21,24 @@ a {
 /* --------------------- HEADER --------------------- */
 header.header-cv {
   text-align: center;
-  padding: 20px;
-  background: #0077ff;
+  padding: 40px 20px;
+  background: url('img/header-bg.jpg') no-repeat center center;
+  background-size: cover;
   color: white;
+  position: relative;
+}
+header.header-cv h1 {
+  margin-bottom: 12px;
+  font-size: 2.2rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 header.header-cv img.profile {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   margin-top: 12px;
-}
-header.header-cv h1 {
-  margin-bottom: 12px;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
 /* --------------------- SECTIONS --------------------- */
