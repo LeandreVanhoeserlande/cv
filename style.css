@@ -50,11 +50,6 @@ section h2 {
   margin-bottom: 12px;
   color: #0077ff;
 }
-section h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #444;
-}
 
 /* --------------------- HOBBIES --------------------- */
 #hobbies .hobbies {
@@ -81,7 +76,8 @@ section h3 {
 
 /* --------------------- EXPERIENCES / FORMATION --------------------- */
 .exp,
-.edu {
+.edu,
+.testimonial {
   background: #fff;
   padding: 16px;
   margin-bottom: 12px;
@@ -89,18 +85,20 @@ section h3 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 .exp h3,
-.edu h3 {
+.edu h3,
+.testimonial h3 {
   margin: 0 0 6px;
 }
 .exp p,
-.edu p {
+.edu p,
+.testimonial p {
   margin: 0 0 6px;
 }
 .exp ul {
   margin: 6px 0 0 20px;
 }
 
-/* --------------------- SKILLS --------------------- */
+/* --------------------- SKILLS (Informatique) --------------------- */
 .skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -144,27 +142,6 @@ section h3 {
   transform: translateX(-50%) translateY(-4px);
 }
 
-/* --------------------- TESTIMONIALS --------------------- */
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-.testimonial {
-  background: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  font-style: italic;
-}
-.testimonial small {
-  display: block;
-  margin-top: 8px;
-  text-align: right;
-  font-style: normal;
-  color: #555;
-}
-
 /* --------------------- FOOTER --------------------- */
 footer {
   text-align: center;
@@ -174,6 +151,66 @@ footer {
 }
 footer a {
   color: #7ec0ff;
+}
+
+/* --------------------- BOUTON RETOUR FLOTTANT --------------------- */
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0077ff;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s, transform 0.2s;
+  z-index: 1000;
+}
+.back-button:hover {
+  background: #005fcc;
+  transform: scale(1.1);
+}
+#hobbies .hobbies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+.hobby {
+  position: relative;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.hobby img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.75;
+}
+.hobby span {
+  position: relative;
+  z-index: 2;
+}
+.hobby:hover {
+  transform: translateY(-5px);
 }
 
 /* --------------------- RESPONSIVE --------------------- */
