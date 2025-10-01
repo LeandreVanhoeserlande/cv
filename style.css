@@ -22,7 +22,7 @@ a {
 header.header-cv {
   text-align: center;
   padding: 60px 20px;
-  background: url("img/header-bg.jpg") no-repeat center center;
+  background: url("img/illustration-blue-sky-clouds-anime-600nw-2415799323.webp") no-repeat center center;
   background-size: cover;
   color: white;
   position: relative;
@@ -227,3 +227,4 @@ footer a {
     font-size: 1.5rem;
   }
 }
+
