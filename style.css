@@ -17,6 +17,7 @@ a {
 .spacer.big {
   height: 100px;
 }
+
 /* --------------------- HEADER --------------------- */
 header.header-cv {
   text-align: center;
@@ -222,4 +223,3 @@ footer a {
     height: 80px;
   }
 }
-
