@@ -62,7 +62,7 @@ section#intro p {
 
 /* --------------------- SECTIONS --------------------- */
 section {
-  max-width: 900px;
+  max-width: 1200px; /* Augmenté de 900px à 1200px pour PC */
   margin: 0 auto;
   padding: 20px;
 }
@@ -237,4 +237,5 @@ footer a {
     font-size: 1.5rem;
   }
 }
+
 
