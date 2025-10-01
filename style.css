@@ -22,7 +22,7 @@ a {
 header.header-cv {
   text-align: center;
   padding: 40px 20px;
-  background: url('img/img/concept-banniere-fond-ecran-site-web-medias-modele-technologie-numerique-fleche-bleu-fonce-geometrique-metallique_112380-1137.avif') no-repeat center center;
+  background: url('img/concept-banniere-fond-ecran-site-web-medias-modele-technologie-numerique-fleche-bleu-fonce-geometrique-metallique_112380-1137.avif') no-repeat center center;
   background-size: cover;
   color: white;
   position: relative;
@@ -212,4 +212,5 @@ footer a {
     height: 80px;
   }
 }
+
 
