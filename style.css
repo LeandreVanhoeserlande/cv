@@ -17,6 +17,7 @@ a {
 .spacer.big {
   height: 100px;
 }
+
 /* --------------------- HEADER --------------------- */
 header.header-cv {
   text-align: center;
@@ -28,15 +29,10 @@ header.header-cv img.profile {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  margin-top: 12px;
+}
+header.header-cv h1 {
   margin-bottom: 12px;
-}
-.info-cv ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.info-cv ul li {
-  margin: 4px 0;
 }
 
 /* --------------------- SECTIONS --------------------- */
@@ -53,27 +49,42 @@ section h2 {
 /* --------------------- HOBBIES --------------------- */
 #hobbies .hobbies {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
 }
 .hobby {
-  background: #fff;
+  position: relative;
+  height: 120px;
   border-radius: 10px;
-  height: 100px;
+  overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+}
+.hobby img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.75;
+}
+.hobby span {
+  position: relative;
+  z-index: 2;
 }
 .hobby:hover {
   transform: translateY(-5px);
 }
-.hobby span {
-  font-weight: 600;
-}
 
-/* --------------------- EXPERIENCES / FORMATION --------------------- */
+/* --------------------- EXPERIENCES / FORMATION / TÉMOIGNAGES --------------------- */
 .exp,
 .edu,
 .testimonial {
@@ -145,11 +156,20 @@ section h2 {
 footer {
   text-align: center;
   padding: 16px;
-  background: #111;
+  background: #0077ff;
   color: white;
 }
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+footer ul li {
+  margin: 4px 0;
+}
 footer a {
-  color: #7ec0ff;
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* --------------------- BOUTON RETOUR FLOTTANT --------------------- */
@@ -175,42 +195,6 @@ footer a {
   background: #005fcc;
   transform: scale(1.1);
 }
-#hobbies .hobbies {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-}
-.hobby {
-  position: relative;
-  height: 120px;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-.hobby img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 0.75;
-}
-.hobby span {
-  position: relative;
-  z-index: 2;
-}
-.hobby:hover {
-  transform: translateY(-5px);
-}
 
 /* --------------------- RESPONSIVE --------------------- */
 @media (max-width: 700px) {
@@ -222,4 +206,3 @@ footer a {
     height: 80px;
   }
 }
-
