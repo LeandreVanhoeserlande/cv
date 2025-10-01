@@ -51,9 +51,7 @@ section#intro {
   padding: 20px;
 }
 section#intro .name-cv {
-  font-size: 2rem; /* Nom un peu plus petit que Bonjour */
   font-weight: 700;
-  color: #0077ff; /* bleu */
   margin-bottom: 12px;
 }
 section#intro p {
@@ -239,3 +237,4 @@ footer a {
     font-size: 1.5rem;
   }
 }
+
