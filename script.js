@@ -10,7 +10,7 @@ document.querySelectorAll(".skill").forEach((skill) => {
     "mouseleave",
     () => (skill.style.transform = "scale(1)")
   );
-});
+}); 
 
 /* ----------------- Modal projet / timeline ----------------- */
 const modal = document.getElementById("modal");
@@ -207,3 +207,4 @@ document.addEventListener("keydown", (e) => {
     }
   }
 });
+
