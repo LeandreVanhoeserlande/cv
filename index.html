@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV - Léandre Van Hoeserlande</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Chart.js pour graphiques simples -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <!-- HEADER -->
-  <header class="header-cv">
-    <h1>Bonjour</h1>
-    <img class="profile" src="img/photo-cv.jpg" alt="Photo CV" />
-  </header>
+    <header class="header-cv">
+      <div class="header-inner">
+        <h1>Bonjour</h1>
+        <img class="profile" src="img/photo_cv.jpg" alt="Photo CV" />
+      </div>
+      <div class="header-actions">
+        <a
+          class="badge-download"
+          href="assets/CV_Leandre_Van_Hoeserlande.pdf"
+          download
+        >
+          ⬇ Télécharger le CV (PDF)
+        </a>
+      </div>
+    </header>
+
     <div class="spacer"></div>
 
     <!-- OBJECTIF -->
     <section id="intro">
-      <h2 class="name-cv">Léandre Van Hoeserlande</h2>
+      <h2>Léandre Van Hoeserlande</h2>
       <p>
         Étudiant en informatique, passionné par le développement, les réseaux et
         la cybersécurité. Je recherche une alternance pour mettre mes
@@ -26,17 +40,29 @@
 
     <div class="spacer"></div>
 
-    <!-- CENTRES D'INTERÊT -->
+    <!-- PERMIS -->
+    <section id="permis">
+      <h2>Permis</h2>
+      <div class="permits">
+        <div class="permit">Permis B (voiture) — 2021</div>
+        <div class="permit">Permis A (moto) — 2022</div>
+        <!-- Ajoute d'autres permis si besoin -->
+      </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <!-- CENTRES D'INTERÊT (réarrangé : Informatique avant Moto) -->
     <section id="hobbies">
       <h2>Centres d’intérêt</h2>
       <div class="hobbies">
-        <a class="hobby hobby-moto" href="moto.html">
-          <img src="img/sportive-aprilia-rs-457-circuit_hd.jpg" alt="Moto" />
-          <span>Moto</span>
-        </a>
         <a class="hobby hobby-informatique" href="informatique.html">
           <img src="img/cap-informatique.jpg" alt="Informatique" />
           <span>Informatique</span>
+        </a>
+        <a class="hobby hobby-moto" href="moto.html">
+          <img src="img/sportive-aprilia-rs-457-circuit_hd.jpg" alt="Moto" />
+          <span>Moto</span>
         </a>
         <a class="hobby hobby-voyage" href="voyage.html">
           <img
@@ -54,25 +80,37 @@
 
     <div class="spacer"></div>
 
-    <!-- EXPÉRIENCES -->
-    <section id="experience">
-      <h2>Expériences Professionnelles</h2>
-      <div class="exp">
-        <h3>Stage – Entreprise X</h3>
-        <p><strong>2023</strong> – Île-de-France</p>
-        <ul>
-          <li>Développement d’un outil en Python</li>
-          <li>Mise en place d’un réseau local sécurisé</li>
-          <li><em>Résultats :</em> +20% de rapidité réseau</li>
-        </ul>
-      </div>
-      <div class="exp">
-        <h3>Projet scolaire – Application Web</h3>
-        <p><strong>2022</strong></p>
-        <ul>
-          <li>Création d’un site web en PHP/MySQL</li>
-          <li>Travail en équipe agile (4 personnes)</li>
-        </ul>
+    <!-- PROJETS PERSONNELS (timeline interactive) -->
+    <section id="projects">
+      <h2>Projets personnels</h2>
+      <div class="timeline" id="timeline">
+        <!-- Chaque item timeline a data-id pour ouvrir le modal -->
+        <div class="timeline-item" data-id="p1">
+          <div class="date">2022</div>
+          <div class="title">Site Frontend — HTML/CSS (Terminal)</div>
+        </div>
+        <div class="timeline-item" data-id="p2">
+          <div class="date">2023</div>
+          <div class="title">Site Frontend — HTML/CSS/JS</div>
+        </div>
+        <div class="timeline-item" data-id="p3">
+          <div class="date">2023</div>
+          <div class="title">
+            Projet réseaux : Small Enterprise Network (Packet Tracer)
+          </div>
+        </div>
+        <div class="timeline-item" data-id="p4">
+          <div class="date">2023</div>
+          <div class="title">Mini HTTP server en C</div>
+        </div>
+        <div class="timeline-item" data-id="p5">
+          <div class="date">2024</div>
+          <div class="title">Détection MITM & règles IDS</div>
+        </div>
+        <div class="timeline-item" data-id="p6">
+          <div class="date">2024</div>
+          <div class="title">Gestionnaire de tâches GUI (Python)</div>
+        </div>
       </div>
     </section>
 
@@ -93,8 +131,9 @@
 
     <div class="spacer"></div>
 
-    <!-- TÉMOIGNAGES -->
+    <!-- TÉMOIGNAGES (noms plausibles) -->
     <section id="testimonials">
+      <h2>Témoignages</h2>
       <div class="testimonials">
         <div class="testimonial">
           <p>
@@ -102,7 +141,7 @@
             maîtrise technique. Il est toujours force de proposition sur les
             projets informatiques et réseaux. »
           </p>
-          <small>— Ancien tuteur</small>
+          <small>— Professeur Jean Dupont</small>
         </div>
         <div class="testimonial">
           <p>
@@ -110,21 +149,22 @@
             impressionnante. Il a mené à bien plusieurs projets complexes avec
             rigueur et créativité. »
           </p>
-          <small>— Responsable de stage</small>
+          <small>— Claire Leroy, Responsable de stage</small>
         </div>
         <div class="testimonial">
           <p>
             « Travailleur, organisé et fiable, Léandre sait s’adapter à tout
             type de projet et propose des solutions pertinentes et efficaces. »
           </p>
-          <small>— Professeur</small>
+          <small>— Professeur Marc Bernard</small>
         </div>
         <div class="testimonial">
           <p>
-            « Son enthousiasme et sa curiosité technique sont communicatifs.
-            Toujours prêt à apprendre et à relever des défis ambitieux. »
+            ²²²²²²²²²²²²²²²²²²²²²²²²²²²²²² « Son enthousiasme et sa curiosité
+            technique sont communicatifs. Toujours prêt à apprendre et à relever
+            des défis ambitieux. »
           </p>
-          <small>— Mentor</small>
+          <small>— Mentor : Martin Durand</small>
         </div>
       </div>
     </section>
@@ -140,8 +180,14 @@
       <p>© 2025 Léandre Van Hoeserlande</p>
     </footer>
 
+    <!-- modal pour projets -->
+    <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close">✕</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
-
-
