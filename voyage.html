@@ -20,6 +20,72 @@
       </p>
     </section>
 
+    <div class="spacer"></div>
+
+    <!-- CARTE DU MONDE SIMPLIFIÉE (SVG) -->
+    <section id="map-section">
+      <h2>Carte des voyages</h2>
+      <div class="map-wrapper">
+        <!-- Simple SVG stylisé; remplace par une vraie carte si tu veux -->
+        <svg
+          id="worldmap"
+          viewBox="0 0 1000 400"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <!-- fond simple -->
+          <rect width="100%" height="100%" fill="#e9f2ff" />
+          <!-- continents simplifiés / placeholder -->
+          <g id="points">
+            <!-- point exemple : Paris -->
+            <circle
+              class="map-point"
+              cx="520"
+              cy="170"
+              r="7"
+              data-title="Paris, France"
+              data-date="2022-08-12"
+              data-img="img/paris.jpg"
+            ></circle>
+            <!-- point exemple : Tokyo -->
+            <circle
+              class="map-point"
+              cx="840"
+              cy="160"
+              r="7"
+              data-title="Tokyo, Japon"
+              data-date="2023-04-05"
+              data-img="img/tokyo.jpg"
+            ></circle>
+            <!-- point exemple : Barcelone -->
+            <circle
+              class="map-point"
+              cx="480"
+              cy="185"
+              r="7"
+              data-title="Barcelone, Espagne"
+              data-date="2021-06-20"
+              data-img="img/barcelone.jpg"
+            ></circle>
+          </g>
+        </svg>
+        <div
+          id="map-popup"
+          class="map-popup hidden"
+          role="dialog"
+          aria-hidden="true"
+        >
+          <button id="map-popup-close">✕</button>
+          <h3 id="map-popup-title"></h3>
+          <p id="map-popup-date"></p>
+          <img
+            id="map-popup-img"
+            src="img/placeholder-travel.jpg"
+            alt="photo voyage"
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- Bouton retour flottant -->
     <a href="index.html" class="back-button">⬅</a>
 
