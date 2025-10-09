@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informatique - Léandre Van Hoeserlande</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <header class="header-cv">
       <h1>Informatique</h1>
     </header>
+
     <section>
       <p>
         Passionné par l’informatique, j’aime explorer le développement logiciel,
@@ -20,39 +22,110 @@
 
     <div class="spacer"></div>
 
-    <!-- LANGAGES -->
+    <!-- LANGAGES CLASSÉS PAR NIVEAU -->
     <section id="skills">
-      <h2>Langages</h2>
-      <div class="skills">
-        <!-- Prog -->
-        <div class="skill" data-lang="Python">
-          <img src="https://cdn.simpleicons.org/python" alt="Python" />
+      <h2>Compétences</h2>
+      <div class="skill-columns">
+        <div class="skill-level">
+          <h3>Fort</h3>
+          <div class="skills">
+            <div
+              class="skill"
+              data-lang="Python"
+              data-desc="Langage polyvalent, scripting, automation, backend."
+              data-projects='["Gestionnaire de tâches (Python GUI)","Mini HTTP server en C (interop)"]'
+            >
+              <img src="https://cdn.simpleicons.org/python" alt="Python" />
+            </div>
+            <div
+              class="skill"
+              data-lang="HTML"
+              data-desc="HTML5 pour structurer les sites."
+              data-projects='["Site Frontend 2022-2023","Site Frontend 2023"]'
+            >
+              <img src="https://cdn.simpleicons.org/html5" alt="HTML" />
+            </div>
+            <div
+              class="skill"
+              data-lang="CSS"
+              data-desc="Mise en forme, responsive design."
+              data-projects='["Site Frontend 2022-2023","Site Frontend 2023"]'
+            >
+              <img src="img/css.svg" alt="CSS" />
+            </div>
+          </div>
         </div>
-        <div class="skill" data-lang="C">
-          <img src="https://cdn.simpleicons.org/c" alt="C" />
+
+        <div class="skill-level">
+          <h3>Intermédiaire</h3>
+          <div class="skills">
+            <div
+              class="skill"
+              data-lang="JavaScript"
+              data-desc="Interactivité front, DOM, fetch."
+              data-projects='["Site Frontend 2023","Projets JS divers"]'
+            >
+              <img
+                src="https://cdn.simpleicons.org/javascript"
+                alt="JavaScript"
+              />
+            </div>
+            <div
+              class="skill"
+              data-lang="SQL"
+              data-desc="Bases de données, requêtes simples."
+              data-projects='["Petit projet CRUD"]'
+            >
+              <img src="https://cdn.simpleicons.org/sqlite" alt="SQL" />
+            </div>
+            <div
+              class="skill"
+              data-lang="C"
+              data-desc="Programmation bas niveau, projets systèmes."
+              data-projects='["Mini HTTP server en C"]'
+            >
+              <img src="https://cdn.simpleicons.org/c" alt="C" />
+            </div>
+          </div>
         </div>
-        <div class="skill" data-lang="C++">
-          <img src="https://cdn.simpleicons.org/cplusplus" alt="C++" />
+
+        <div class="skill-level">
+          <h3>Bas</h3>
+          <div class="skills">
+            <div
+              class="skill"
+              data-lang="C++"
+              data-desc="Notions de programmation orientée objet."
+              data-projects='["TP C++"]'
+            >
+              <img src="https://cdn.simpleicons.org/cplusplus" alt="C++" />
+            </div>
+            <div
+              class="skill"
+              data-lang="PHP"
+              data-desc="Développement web côté serveur (bases)."
+              data-projects='["Petit site PHP/MySQL scolaire"]'
+            >
+              <img src="https://cdn.simpleicons.org/php" alt="PHP" />
+            </div>
+            <div
+              class="skill"
+              data-lang="Scratch"
+              data-desc="Initiation & pédagogie."
+              data-projects='["Ateliers scolaires"]'
+            >
+              <img src="https://cdn.simpleicons.org/scratch" alt="Scratch" />
+            </div>
+          </div>
         </div>
-        <div class="skill" data-lang="PHP">
-          <img src="https://cdn.simpleicons.org/php" alt="PHP" />
-        </div>
-        <div class="skill" data-lang="Scratch">
-          <img src="https://cdn.simpleicons.org/scratch" alt="Scratch" />
-        </div>
-        <!-- Web -->
-        <div class="skill" data-lang="HTML">
-          <img src="https://cdn.simpleicons.org/html5" alt="HTML" />
-        </div>
-        <div class="skill" data-lang="CSS">
-          <img src="img/css.svg" alt="CSS" />
-        </div>
-        <div class="skill" data-lang="JavaScript">
-          <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" />
-        </div>
-        <div class="skill" data-lang="SQL">
-          <img src="https://cdn.simpleicons.org/sqlite" alt="SQL" />
-        </div>
+      </div>
+
+      <!-- panneau description qui se met à jour au clic -->
+      <div id="skill-panel" class="skill-panel hidden" aria-live="polite">
+        <h3 id="skill-panel-title">Cliquez sur une compétence</h3>
+        <p id="skill-panel-desc"></p>
+        <p><strong>Projets associés :</strong></p>
+        <ul id="skill-panel-projects"></ul>
       </div>
     </section>
 
@@ -62,47 +135,54 @@
     <section id="cybersecurity">
       <h2>Cybersécurité</h2>
       <div class="skills">
-        <div class="skill" data-lang="Wireshark">
+        <div
+          class="skill"
+          data-lang="Wireshark"
+          data-desc="Analyse de trames et diagnostic réseau."
+        >
           <img src="https://cdn.simpleicons.org/wireshark" alt="Wireshark" />
         </div>
-        <div class="skill" data-lang="Metasploit">
-          <img src="https://cdn.simpleicons.org/metasploit" alt="Metasploit" />
-        </div>
-        <div class="skill" data-lang="Kali Linux">
+        <div
+          class="skill"
+          data-lang="Kali Linux"
+          data-desc="Environnements d'audit (utilisation responsable)."
+        >
           <img src="https://cdn.simpleicons.org/kalilinux" alt="Kali Linux" />
-        </div>
-        <div class="skill" data-lang="Burp Suite">
-          <img src="https://cdn.simpleicons.org/burpsuite" alt="Burp Suite" />
-        </div>
-        <div class="skill" data-lang="Hack The Box">
-          <img
-            src="https://cdn.simpleicons.org/hackthebox"
-            alt="Hack The Box"
-          />
         </div>
       </div>
     </section>
 
     <div class="spacer"></div>
 
-    <!-- RÉSEAUX -->
-    <section id="networks">
-      <h2>Réseaux</h2>
-      <div class="skills">
-        <div class="skill" data-lang="Cisco">
-          <img src="https://cdn.simpleicons.org/cisco" alt="Cisco" />
-        </div>
-        <div class="skill" data-lang="Packet Tracer">
-          <img src="img/packet.png" alt="Packet Tracer" />
-        </div>
-      </div>
+    <!-- GRAPHIQUE : NIVEAUX (bar chart) -->
+    <section id="charts">
+      <h2>Visualisation des compétences</h2>
+      <canvas id="skillChart" width="400" height="200"></canvas>
     </section>
+
+    <div class="spacer"></div>
+
+    <!-- EN COURS D'APPRENTISSAGE -->
+    <section id="learning">
+      <h2>J'apprends actuellement</h2>
+      <ul>
+        <li>Rust (bases) — pour systèmes embarqués</li>
+        <li>Go — pour microservices</li>
+        <li>Tests d'intrusion & OSINT (niveau pratique)</li>
+      </ul>
+    </section>
+
     <!-- Bouton retour flottant -->
     <a href="index.html" class="back-button">⬅</a>
+
+    <!-- modal pour projets -->
+    <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close">✕</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
