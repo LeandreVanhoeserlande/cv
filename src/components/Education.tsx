@@ -16,7 +16,7 @@ const Education = () => {
                   <GraduationCap className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <CardTitle className="text-xl">École d'Ingénieur</CardTitle>
+                  <CardTitle className="text-xl">Isen-Yncrea-Ouest</CardTitle>
                   <p className="text-sm text-muted-foreground">En cours</p>
                 </div>
               </div>

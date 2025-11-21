@@ -1,26 +1,31 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Dumbbell, Plane, Bike, Code2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const interests = [
   {
     name: "Sport",
     icon: Dumbbell,
-    color: "text-primary"
+    color: "text-primary",
+    link: "/sports"
   },
   {
     name: "Voyage",
     icon: Plane,
-    color: "text-secondary"
+    color: "text-secondary",
+    link: "/voyages"
   },
   {
     name: "Moto",
     icon: Bike,
-    color: "text-primary"
+    color: "text-primary",
+    link: null
   },
   {
     name: "Informatique",
     icon: Code2,
-    color: "text-secondary"
+    color: "text-secondary",
+    link: "/#competences"
   }
 ];
 
@@ -34,10 +39,9 @@ const Interests = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {interests.map((interest, index) => {
             const Icon = interest.icon;
-            return (
+            const cardContent = (
               <Card 
-                key={index} 
-                className="hover:shadow-card transition-all duration-300 hover:scale-110 animate-fade-in border-border/50 text-center"
+                className="hover:shadow-card transition-all duration-300 hover:scale-110 animate-fade-in border-border/50 text-center cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="pt-8 pb-8">
@@ -49,6 +53,16 @@ const Interests = () => {
                   </div>
                 </CardContent>
               </Card>
+            );
+            
+            return interest.link ? (
+              <Link key={index} to={interest.link} className="block">
+                {cardContent}
+              </Link>
+            ) : (
+              <div key={index}>
+                {cardContent}
+              </div>
             );
           })}
         </div>
