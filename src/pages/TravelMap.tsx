@@ -2,17 +2,19 @@ import { ArrowLeft, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import worldMap from "@/assets/world-map.avif";
 
+// Coordonnées ajustées pour la carte du monde (en pourcentage)
 const destinations = [
-  { name: "Sicile", country: "Italie", x: 54, y: 42 },
-  { name: "Majorque", country: "Espagne", x: 50.5, y: 40 },
-  { name: "Bangkok", country: "Thaïlande", x: 75, y: 52 },
-  { name: "Tenerife", country: "Espagne", x: 43, y: 46 },
-  { name: "Marrakech", country: "Maroc", x: 47, y: 44 },
-  { name: "Tunisie", country: "Tunisie", x: 52, y: 43 },
-  { name: "Guadeloupe", country: "France", x: 28, y: 50 },
-  { name: "Hurghada", country: "Égypte", x: 58, y: 46 },
-  { name: "Saarbrücken", country: "Allemagne", x: 51, y: 35 },
+  { name: "Sicile", country: "Italie", x: 52, y: 38 },
+  { name: "Majorque", country: "Espagne", x: 47, y: 36 },
+  { name: "Bangkok", country: "Thaïlande", x: 76, y: 50 },
+  { name: "Tenerife", country: "Espagne", x: 40, y: 44 },
+  { name: "Marrakech", country: "Maroc", x: 44, y: 42 },
+  { name: "Tunisie", country: "Tunisie", x: 51, y: 40 },
+  { name: "Guadeloupe", country: "France", x: 26, y: 52 },
+  { name: "Hurghada", country: "Égypte", x: 57, y: 44 },
+  { name: "Saarbrücken", country: "Allemagne", x: 50, y: 30 },
 ];
 
 const TravelMap = () => {
@@ -34,96 +36,38 @@ const TravelMap = () => {
         </p>
 
         {/* World Map Container */}
-        <div className="relative w-full aspect-[2/1] bg-muted/30 rounded-lg border border-border/50 overflow-hidden mb-8">
-          {/* Simple World Map SVG */}
-          <svg
-            viewBox="0 0 100 50"
-            className="w-full h-full"
-            preserveAspectRatio="xMidYMid slice"
-          >
-            {/* Simplified world continents */}
-            <defs>
-              <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(var(--muted))" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="hsl(var(--muted))" stopOpacity="0.3" />
-              </linearGradient>
-            </defs>
-            
-            {/* Ocean background */}
-            <rect width="100" height="50" fill="url(#mapGradient)" />
-            
-            {/* Simplified continents - stylized shapes */}
-            <g fill="hsl(var(--muted-foreground))" fillOpacity="0.15" stroke="hsl(var(--border))" strokeWidth="0.2">
-              {/* North America */}
-              <path d="M5,10 Q15,8 25,12 Q30,18 28,25 Q20,28 15,22 Q8,20 5,15 Z" />
-              {/* South America */}
-              <path d="M25,35 Q30,32 32,38 Q30,48 25,48 Q20,45 22,38 Z" />
-              {/* Europe */}
-              <path d="M45,18 Q55,15 58,20 Q56,28 50,30 Q45,28 44,22 Z" />
-              {/* Africa */}
-              <path d="M48,32 Q55,30 60,35 Q58,48 52,50 Q45,48 46,40 Z" />
-              {/* Asia */}
-              <path d="M60,12 Q75,8 85,15 Q88,25 80,32 Q70,35 65,28 Q58,22 60,12 Z" />
-              {/* Australia */}
-              <path d="M78,38 Q85,36 88,40 Q86,46 80,46 Q76,44 78,38 Z" />
-            </g>
-
-            {/* Destination pins */}
-            {destinations.map((dest) => (
-              <g
-                key={dest.name}
-                onMouseEnter={() => setHoveredPin(dest.name)}
-                onMouseLeave={() => setHoveredPin(null)}
-                className="cursor-pointer"
-              >
-                {/* Pin circle */}
-                <circle
-                  cx={dest.x}
-                  cy={dest.y}
-                  r={hoveredPin === dest.name ? 1.5 : 1}
-                  fill="hsl(var(--primary))"
-                  className="transition-all duration-200"
-                />
-                {/* Pulse animation ring */}
-                <circle
-                  cx={dest.x}
-                  cy={dest.y}
-                  r="1.8"
-                  fill="none"
-                  stroke="hsl(var(--primary))"
-                  strokeWidth="0.3"
-                  opacity={hoveredPin === dest.name ? 0.6 : 0}
-                  className="transition-opacity duration-200"
-                />
-                
-                {/* Tooltip on hover */}
-                {hoveredPin === dest.name && (
-                  <g>
-                    <rect
-                      x={dest.x - 8}
-                      y={dest.y - 6}
-                      width="16"
-                      height="4"
-                      rx="0.5"
-                      fill="hsl(var(--popover))"
-                      stroke="hsl(var(--border))"
-                      strokeWidth="0.1"
-                    />
-                    <text
-                      x={dest.x}
-                      y={dest.y - 3.5}
-                      textAnchor="middle"
-                      fontSize="2"
-                      fill="hsl(var(--popover-foreground))"
-                      className="font-medium"
-                    >
-                      {dest.name}
-                    </text>
-                  </g>
-                )}
-              </g>
-            ))}
-          </svg>
+        <div className="relative w-full aspect-[2/1] rounded-lg border border-border/50 overflow-hidden mb-8">
+          {/* Map Background Image */}
+          <img 
+            src={worldMap} 
+            alt="Carte du monde" 
+            className="w-full h-full object-cover opacity-60"
+          />
+          
+          {/* Destination pins overlay */}
+          {destinations.map((dest) => (
+            <div
+              key={dest.name}
+              className="absolute cursor-pointer group"
+              style={{ left: `${dest.x}%`, top: `${dest.y}%`, transform: 'translate(-50%, -50%)' }}
+              onMouseEnter={() => setHoveredPin(dest.name)}
+              onMouseLeave={() => setHoveredPin(null)}
+            >
+              {/* Pin dot */}
+              <div 
+                className={`w-3 h-3 rounded-full bg-primary transition-all duration-200 ${
+                  hoveredPin === dest.name ? 'scale-150 shadow-lg shadow-primary/50' : ''
+                }`}
+              />
+              
+              {/* Tooltip on hover */}
+              {hoveredPin === dest.name && (
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-popover border border-border rounded text-xs whitespace-nowrap z-10">
+                  {dest.name}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Destinations list */}
