@@ -123,29 +123,33 @@ const Skills = () => {
           </TabsContent>
 
           <TabsContent value="projects">
-            <div className="grid md:grid-cols-2 gap-6">
-              {projects.map((project, index) => {
-                const Icon = project.icon;
-                return (
-                  <Card 
-                    key={index} 
-                    className="hover:shadow-card transition-all duration-300 hover:scale-105 animate-fade-in border-border/50"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <CardHeader>
-                      <div className="flex items-start justify-between mb-2">
-                        <Badge variant="outline" className="text-sm">{project.year}</Badge>
-                        <Icon className={`w-6 h-6 ${project.color}`} />
-                      </div>
-                      <CardTitle className="text-xl">{project.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground text-sm">{project.description}</p>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
+            <Card className="hover:shadow-card transition-all duration-300 animate-fade-in border-border/50 max-w-4xl mx-auto">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <Terminal className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">Projets personnels</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {projects.map((project, index) => (
+                    <div 
+                      key={index}
+                      className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 animate-fade-in"
+                      style={{ animationDelay: `${index * 0.05}s` }}
+                    >
+                      <Badge variant="outline" className="text-xs shrink-0">{project.year}</Badge>
+                      <span className="text-sm font-medium">{project.title}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm mt-4 text-center">
+                  Voir les détails dans la section <a href="/informatique" className="text-primary hover:underline">Centre d'intérêt Informatique</a>
+                </p>
+              </CardContent>
+            </Card>
           </TabsContent>
         </Tabs>
       </div>

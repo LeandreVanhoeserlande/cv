@@ -23,14 +23,9 @@ const Hero = () => {
           </Badge>
         </div>
         <div className="flex justify-center gap-4">
-          <a href="#projets" className="inline-block">
+          <a href="#competences" className="inline-block">
             <button className="bg-gradient-tech text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:shadow-glow transition-all duration-300 hover:scale-105">
-              Voir mes projets
-            </button>
-          </a>
-          <a href="#contact" className="inline-block">
-            <button className="bg-card text-card-foreground border-2 border-border px-8 py-3 rounded-lg font-semibold hover:border-primary transition-all duration-300 hover:scale-105">
-              Me contacter
+              Voir mes compétences
             </button>
           </a>
         </div>
