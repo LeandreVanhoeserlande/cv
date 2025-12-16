@@ -3,13 +3,16 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Code2, Shield, Terminal, Globe, Network, Server, Shield as ShieldIcon, AppWindow } from "lucide-react";
 
-const programmingSkills = [
-  "Python", "HTML", "CSS", "JavaScript", "SQL", "C", "C++", "Scratch", "PHP"
-];
+const programmingSkills = {
+  avance: ["Python", "JavaScript", "SQL", "C", "HTML"],
+  intermediaire: ["C++", "CSS"],
+  bases: ["Scratch", "PHP"]
+};
 
-const cyberSkills = [
-  "Kali Linux", "WSL", "Cisco"
-];
+const cyberSkills = {
+  avance: ["Kali Linux", "WSL"],
+  bases: ["Cisco"]
+};
 
 const projects = [
   {
@@ -80,17 +83,36 @@ const Skills = () => {
                   <CardTitle className="text-2xl">Langages de programmation</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {programmingSkills.map((skill, index) => (
-                    <Badge 
-                      key={index} 
-                      variant="secondary" 
-                      className="text-sm py-1.5 px-3"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="text-sm font-semibold text-primary mb-2">Avancé</p>
+                  <div className="flex flex-wrap gap-2">
+                    {programmingSkills.avance.map((skill, index) => (
+                      <Badge key={index} variant="default" className="text-sm py-1.5 px-3">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-muted-foreground mb-2">Intermédiaire</p>
+                  <div className="flex flex-wrap gap-2">
+                    {programmingSkills.intermediaire.map((skill, index) => (
+                      <Badge key={index} variant="secondary" className="text-sm py-1.5 px-3">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-muted-foreground/70 mb-2">Bases / scolaire</p>
+                  <div className="flex flex-wrap gap-2">
+                    {programmingSkills.bases.map((skill, index) => (
+                      <Badge key={index} variant="outline" className="text-sm py-1.5 px-3">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -106,17 +128,26 @@ const Skills = () => {
                   <CardTitle className="text-2xl">Outils de cybersécurité</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {cyberSkills.map((skill, index) => (
-                    <Badge 
-                      key={index} 
-                      variant="secondary" 
-                      className="text-sm py-1.5 px-3"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="text-sm font-semibold text-primary mb-2">Avancé</p>
+                  <div className="flex flex-wrap gap-2">
+                    {cyberSkills.avance.map((skill, index) => (
+                      <Badge key={index} variant="default" className="text-sm py-1.5 px-3">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-muted-foreground/70 mb-2">Bases / scolaire</p>
+                  <div className="flex flex-wrap gap-2">
+                    {cyberSkills.bases.map((skill, index) => (
+                      <Badge key={index} variant="outline" className="text-sm py-1.5 px-3">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </CardContent>
             </Card>
