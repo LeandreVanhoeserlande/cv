@@ -19,13 +19,13 @@ const interests = [
     name: "Moto",
     icon: Bike,
     color: "text-primary",
-    link: null
+    link: "/moto"
   },
   {
     name: "Informatique",
     icon: Code2,
     color: "text-secondary",
-    link: "/#competences"
+    link: "/informatique"
   }
 ];
 
